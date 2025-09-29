@@ -1,6 +1,7 @@
 const quizData = [
   {
     question: "1. Qual a função do óleo do motor?",
+    image: "img1.jpg",
     options: [
       { text: "Lubrificar as peças do motor", correct: true },
       { text: "Desempenhar a função de combustível", correct: false },
@@ -9,6 +10,7 @@ const quizData = [
   },
   {
     question: "2. Quando devemos trocar os pneus de um carro?",
+    image: "img2.jpg",
     options: [
       { text: "A cada 2 anos, independente da quilometragem", correct: false },
       { text: "Quando a borracha do pneu está desgastada", correct: true },
@@ -17,6 +19,7 @@ const quizData = [
   },
   {
     question: "3. O que é alinhamento de rodas?",
+    image: "img3.jpg",
     options: [
       { text: "Ajuste na suspensão para melhorar o desempenho do motor", correct: false },
       { text: "Ajuste das rodas para garantir que o carro ande reto e sem puxar para um lado", correct: true },
@@ -30,6 +33,7 @@ const nextBtn = document.getElementById("next-btn");
 const resultContainer = document.getElementById("result-container");
 const resultText = document.getElementById("result-text");
 const restartBtn = document.getElementById("restart-btn");
+const background = document.getElementById("background");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -40,7 +44,10 @@ function loadQuestion() {
   nextBtn.disabled = true;
 
   const currentQuestion = quizData[currentQuestionIndex];
-  
+
+  // Atualiza a imagem de fundo
+  background.style.backgroundImage = `url('${currentQuestion.image}')`;
+
   // Limpa o container
   quizContainer.innerHTML = "";
 
@@ -50,11 +57,11 @@ function loadQuestion() {
   questionEl.innerText = currentQuestion.question;
   quizContainer.appendChild(questionEl);
 
-  // Cria a lista de opções
+  // Cria as opções
   const optionsList = document.createElement("ul");
   optionsList.classList.add("options");
 
-  currentQuestion.options.forEach((option, index) => {
+  currentQuestion.options.forEach((option) => {
     const optionItem = document.createElement("li");
     const optionBtn = document.createElement("button");
     optionBtn.innerText = option.text;
@@ -63,49 +70,4 @@ function loadQuestion() {
     optionsList.appendChild(optionItem);
   });
 
-  quizContainer.appendChild(optionsList);
-}
-
-function selectOption(button, correct) {
-  if (answered) return; // Não permite mudar após selecionar
-  
-  answered = true;
-  nextBtn.disabled = false;
-
-  // Marcar a opção selecionada
-  const allOptions = document.querySelectorAll(".options button");
-  allOptions.forEach(btn => btn.classList.remove("selected"));
-
-  button.classList.add("selected");
-
-  // Atualiza o score
-  if (correct) {
-    score++;
-  }
-}
-
-nextBtn.addEventListener("click", () => {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < quizData.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-});
-
-restartBtn.addEventListener("click", () => {
-  currentQuestionIndex = 0;
-  score = 0;
-  resultContainer.classList.add("hide");
-  quizContainer.classList.remove("hide");
-  nextBtn.classList.remove("hide");
-  loadQuestion();
-});
-
-function showResult() {
-  quizContainer.classList.add("hide");
-  nextBtn.classList.add("hide");
-  resultContainer.classList.remove("hide");
-
-  resultText.innerText = `Você acertou ${score} de ${quizData.length} perguntas!`;
-}
+  quiz
