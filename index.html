@@ -1,68 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecânica Automotiva - Quiz</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quiz Mecânica Automotiva</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
     <header>
-        <h1>Quiz de Mecânica Automotiva</h1>
-        <p>Testes seus conhecimentos sobre manutenção de veículos!</p>
+      <h1>Quiz de Mecânica Automotiva</h1>
+      <p>Teste seu conhecimento respondendo as perguntas!</p>
     </header>
 
-    <section id="quiz">
-        <h2>Vamos começar!</h2>
+    <div id="quiz-container">
+      <!-- Pergunta será injetada aqui pelo JS -->
+    </div>
 
-        <form id="quiz-form">
-            <!-- Pergunta 1 -->
-            <div class="question">
-                <p>1. O que é a função do óleo do motor?</p>
-                <input type="radio" name="q1" id="q1a" value="correto">
-                <label for="q1a">Lubrificar as peças do motor</label><br>
-                <input type="radio" name="q1" id="q1b" value="errado">
-                <label for="q1b">Desempenhar a função de combustível</label><br>
-                <input type="radio" name="q1" id="q1c" value="errado">
-                <label for="q1c">Servir como substituto do freio</label><br>
-            </div>
+    <div class="controls">
+      <button id="next-btn" disabled>Próxima</button>
+    </div>
 
-            <!-- Pergunta 2 -->
-            <div class="question">
-                <p>2. Quando devemos trocar os pneus de um carro?</p>
-                <input type="radio" name="q2" id="q2a" value="errado">
-                <label for="q2a">A cada 2 anos, independente da quilometragem</label><br>
-                <input type="radio" name="q2" id="q2b" value="correto">
-                <label for="q2b">Quando a borracha do pneu está desgastada</label><br>
-                <input type="radio" name="q2" id="q2c" value="errado">
-                <label for="q2c">Nunca, os pneus não precisam de troca</label><br>
-            </div>
+    <div id="result-container" class="hide">
+      <h2>Seu resultado</h2>
+      <p id="result-text"></p>
+      <button id="restart-btn">Reiniciar Quiz</button>
+    </div>
+  </div>
 
-            <!-- Pergunta 3 -->
-            <div class="question">
-                <p>3. O que é alinhamento de rodas?</p>
-                <input type="radio" name="q3" id="q3a" value="errado">
-                <label for="q3a">Ajuste na suspensão para melhorar o desempenho do motor</label><br>
-                <input type="radio" name="q3" id="q3b" value="correto">
-                <label for="q3b">Ajuste das rodas para garantir que o carro ande reto e sem puxar para um lado</label><br>
-                <input type="radio" name="q3" id="q3c" value="errado">
-                <label for="q3c">Troca de peças do carro que ficam danificadas com o tempo</label><br>
-            </div>
-
-            <!-- Botão de Enviar -->
-            <button type="submit" id="submit-btn">Ver Resultado</button>
-        </form>
-
-        <div id="result" style="display: none;">
-            <h3>Resultado:</h3>
-            <p id="score"></p>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Mecânica Automotiva. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
+
