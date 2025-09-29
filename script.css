@@ -1,16 +1,12 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    padding: 20px;
 }
 
+/* Estilos do header */
 header {
     background-color: #333;
     color: white;
@@ -19,25 +15,24 @@ header {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 section {
-    margin: 20px;
-    padding: 20px;
+    margin-top: 30px;
     background-color: white;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #007bff;
-    margin-bottom: 15px;
+/* Estilo das perguntas */
+.question {
+    margin-bottom: 20px;
 }
 
-ul {
-    list-style-type: square;
-    padding-left: 20px;
+input[type="radio"] {
+    margin-right: 10px;
 }
 
 button {
@@ -47,18 +42,17 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Resultado */
+#result {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
 }

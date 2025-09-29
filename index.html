@@ -3,39 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mecânica Automotiva</title>
+    <title>Mecânica Automotiva - Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Mecânica Automotiva</h1>
-        <p>Saiba tudo sobre manutenção e reparo de veículos!</p>
+        <h1>Quiz de Mecânica Automotiva</h1>
+        <p>Testes seus conhecimentos sobre manutenção de veículos!</p>
     </header>
 
-    <section id="intro">
-        <h2>O que é Mecânica Automotiva?</h2>
-        <p>A mecânica automotiva é a área responsável pela manutenção e reparo dos sistemas e componentes de veículos.</p>
-    </section>
+    <section id="quiz">
+        <h2>Vamos começar!</h2>
 
-    <section id="tipos-servicos">
-        <h2>Tipos de Serviços</h2>
-        <ul>
-            <li>Troca de óleo</li>
-            <li>Alinhamento e balanceamento</li>
-            <li>Troca de pneus</li>
-            <li>Reparo de motores</li>
-        </ul>
-    </section>
+        <form id="quiz-form">
+            <!-- Pergunta 1 -->
+            <div class="question">
+                <p>1. O que é a função do óleo do motor?</p>
+                <input type="radio" name="q1" id="q1a" value="correto">
+                <label for="q1a">Lubrificar as peças do motor</label><br>
+                <input type="radio" name="q1" id="q1b" value="errado">
+                <label for="q1b">Desempenhar a função de combustível</label><br>
+                <input type="radio" name="q1" id="q1c" value="errado">
+                <label for="q1c">Servir como substituto do freio</label><br>
+            </div>
 
-    <section id="faq">
-        <h2>Perguntas Frequentes</h2>
-        <button id="faq-btn">Mostrar Respostas</button>
-        <div id="faq-answers" style="display: none;">
-            <p><strong>1. Quando devo trocar o óleo do carro?</strong></p>
-            <p>Geralmente, a troca de óleo deve ser feita a cada 10.000 a 15.000 km.</p>
+            <!-- Pergunta 2 -->
+            <div class="question">
+                <p>2. Quando devemos trocar os pneus de um carro?</p>
+                <input type="radio" name="q2" id="q2a" value="errado">
+                <label for="q2a">A cada 2 anos, independente da quilometragem</label><br>
+                <input type="radio" name="q2" id="q2b" value="correto">
+                <label for="q2b">Quando a borracha do pneu está desgastada</label><br>
+                <input type="radio" name="q2" id="q2c" value="errado">
+                <label for="q2c">Nunca, os pneus não precisam de troca</label><br>
+            </div>
 
-            <p><strong>2. Como saber se meu carro precisa de alinhamento?</strong></p>
-            <p>Se o carro estiver puxando para um lado ou se o volante estiver desalinhado, pode ser hora de alinhar.</p>
+            <!-- Pergunta 3 -->
+            <div class="question">
+                <p>3. O que é alinhamento de rodas?</p>
+                <input type="radio" name="q3" id="q3a" value="errado">
+                <label for="q3a">Ajuste na suspensão para melhorar o desempenho do motor</label><br>
+                <input type="radio" name="q3" id="q3b" value="correto">
+                <label for="q3b">Ajuste das rodas para garantir que o carro ande reto e sem puxar para um lado</label><br>
+                <input type="radio" name="q3" id="q3c" value="errado">
+                <label for="q3c">Troca de peças do carro que ficam danificadas com o tempo</label><br>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <button type="submit" id="submit-btn">Ver Resultado</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h3>Resultado:</h3>
+            <p id="score"></p>
         </div>
     </section>
 
@@ -46,4 +66,3 @@
     <script src="main.js"></script>
 </body>
 </html>
-    
