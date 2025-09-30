@@ -1,166 +1,66 @@
-/* Remove margens e padding e define 100% altura para body */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden; /* Evita scroll */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Fundo ocupa toda a tela, com imagem de background dinâmica */
-#background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.6); /* Escurece a imagem para destacar texto */
-  z-index: -1; /* Fica atrás do conteúdo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
 }
 
-/* Container centralizado */
-.container {
-  position: relative;
-  height: 100vh;
-  max-width: 600px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centraliza verticalmente */
-  align-items: center;
-  padding: 20px;
-  color: white;
-  text-align: center;
+header {
+    background-color: #2a3d66;
+    color: #fff;
+    padding: 20px;
+    border-bottom: 5px solid #1a2b44;
 }
 
-/* Caixa com fundo semi-transparente para perguntas */
-#quiz-container {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 30px 25px;
-  border-radius: 15px;
-  min-width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.7);
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
 }
 
-/* Cabeçalho com sombra para dar destaque */
-header h1 {
-  margin-bottom: 5px;
-  font-size: 2rem;
-  text-shadow: 1px 1px 4px #000;
+p {
+    font-size: 1.2em;
 }
 
-header p {
-  margin-bottom: 30px;
-  font-size: 1.1rem;
-  text-shadow: 1px 1px 4px #000;
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Pergunta */
-.question {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 20px;
+.image-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Lista de opções */
-.options {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.options li {
-  margin-bottom: 15px;
-}
-
-/* Botões das opções */
-.options button {
-  width: 100%;
-  padding: 15px;
-  font-size: 1rem;
-  border: 2px solid white;
-  background: transparent;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  box-shadow: 0 0 5px rgba(255,255,255,0.3);
-}
-
-.options button:hover {
-  background: white;
-  color: #27ae60;
-  border-color: #27ae60;
-  box-shadow: 0 0 10px #27ae60;
-}
-
-.options button.selected {
-  background: #27ae60;
-  border-color: #1e8449;
-  color: white;
-  box-shadow: 0 0 10px #1e8449;
-}
-
-/* Botão próxima */
-.controls {
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-button#next-btn,
-button#restart-btn {
-  padding: 15px 40px;
-  font-size: 1.2rem;
-  background-color: #27ae60;
-  border: none;
-  border-radius: 15px;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 0 10px #27ae60;
-  transition: background-color 0.3s ease;
-}
-
-button#next-btn:disabled {
-  background-color: #7bd288;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-button#next-btn:hover:not(:disabled),
-button#restart-btn:hover {
-  background-color: #1e8449;
-}
-
-/* Resultado */
-#result-container {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.8);
-}
-
-.hide {
-  display: none;
-}
-
-/* Responsividade */
-@media(max-width: 650px) {
-  .container {
-    padding: 15px;
-  }
-  #quiz-container {
-    padding: 20px 15px;
-  }
-  button#next-btn,
-  button#restart-btn {
+.image-container img {
     width: 100%;
-  }
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #2a3d66;
+    color: #fff;
 }
