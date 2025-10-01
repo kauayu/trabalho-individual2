@@ -64,3 +64,8 @@ footer {
     background-color: #2a3d66;
     color: #fff;
 }
+
+.caixas {
+    background-color: #d9d9d9; /*cinza */
+    padding: 30px;
+}
